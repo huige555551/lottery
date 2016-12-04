@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">	
+	<!-- 可选的Bootstrap主题文件（一般不使用） -->
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>	
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>	
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<meta charset="UTF-8">
+	<title>足彩810纵横表</title>
+</head>
+<body>
+	{% for listItem in lists %}
+	<table class="table table-bordered table-hover"  style="width:50%"	>
+		<caption>{{listItem.srcName.decode("utf-8")}}</caption>
+		<thead>
+			<tr>
+				<th>类别</th>
+				<th>3</th>
+				<th>1</th>
+				<th>0</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>胆</td>
+				<td>{{listItem.mainThree}}</td>
+				<td>{{listItem.mainOne}}</td>
+				<td>{{listItem.mainZero}}</td>
+			</tr>
+			<tr>
+				<td>首选</td>
+				<td>{{listItem.firstThree}}</td>
+				<td>{{listItem.firstOne}}</td>
+				<td>{{listItem.firstZero}}</td>
+			</tr>
+			<tr>
+				<td>次选</td>
+				<td>{{listItem.secondThree}}</td>
+				<td>{{listItem["secondOne"]}}</td>
+				<td>{{listItem["secondZero"]}}</td>
+			</tr>
+			<tr>
+				<td>首＋次</td>
+				<td>{{listItem.firstThreePlusSecondThree}}</td>
+				<td>{{listItem.firstOnePlusSecondOne}}</td>
+				<td>{{listItem.firstZeroPlusSecondZero}}</td>
+			</tr>
+			<tr>
+				<td>胆＋首＋次</td>
+				<td>{{listItem.mainThreePlusFirstThreePlusSecondThree}}</td>
+				<td>{{listItem.mainOnePlusFirstOnePlusSecondOne}}</td>
+				<td>{{listItem.mainZeroPlusFirstZeroPlusSecondZero}}</td>
+			</tr>
+			<tr>
+				<td>31:</td>
+				<td>{{listItem.threeAndOne}}</td>
+			
+			</tr>
+			<tr>
+				<td>30:</td>
+				<td>{{listItem.threeAndZero}}</td>
+				
+			</tr>
+			<tr>
+				<td>10:</td>
+				<td>{{listItem.oneAndZero}}</td>
+			
+			</tr>
+			<tr>
+				<td>补3:</td>
+				<td>{{listItem.fillThree}}</td>
+				
+			</tr>
+			<tr>
+				<td>补1:</td>
+				<td>{{listItem.fillOne}}</td>
+			
+			</tr>
+			<tr>
+				<td>补0:</td>
+				<td>{{listItem.fillZero}}</td>
+				
+			</tr>
+		</tbody>
+	</table>
+{% endfor %}
+
+</body>
+</html>
